@@ -1,0 +1,48 @@
+<ui version="4.0">
+ <author/>
+ <comment/>
+ <exportmacro/>
+ <class>RoadForm</class>
+ <widget name="RoadForm" class="QWidget">
+ <property name="geometry">
+  <rect>
+   <x>0</x>
+   <y>0</y>
+   <width>450</width>
+   <height>270</height>
+  </rect>
+ </property>
+ <property name="windowTitle">
+  <string>Unlock Bar</string>
+ </property>
+ <layout class="QHBoxLayout" name="horizontalLayout">
+  <item>
+   <widget class="QLabel" name="label">
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </item>
+  <item>
+   <widget class="QListWidget" name="listWidget">
+    <property name="maximumSize">
+     <size>
+      <width>200</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monaco</family>
+     </font>
+    </property>
+   </widget>
+  </item>
+ </layout>
+ </widget>
+ <pixmapfunction/>
+ <connections/>
+</ui>
