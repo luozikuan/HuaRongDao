@@ -1,15 +1,8 @@
 #include "widget.h"
 #include "ui_widget.h"
+#include "levels.h"
 
 #include <QTimer>
-
-QString puzzle {
-    "a00b"
-    ".00c"
-    "deef"
-    "ghif"
-    "ghi."
-};
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
@@ -19,11 +12,13 @@ Widget::Widget(QWidget *parent)
 
     QString test = "ahhb"
                    "ciib"
-                   "dgee"
-                   "00.f"
+                   "d.ee"
+                   "00gf"
                    "00.f";
     QTimer::singleShot(100, [=](){
-        ui->widget->solve(test);
+        int currentLevel = puzzle.size() - 1;
+        //int currentLevel = 2;
+        ui->widget->solve(puzzle.at(currentLevel));
     });
 }
 

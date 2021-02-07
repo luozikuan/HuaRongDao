@@ -213,8 +213,10 @@ void RoadForm::printPath(const QSharedPointer<TreeNode> path)
     QStringList resultItems;
     int cnt = 1;
     int textWidth = int(std::log(solution.size()) / std::log(10)) + 1;
+    int directionCounter[5] = {0};
     while (!solution.isEmpty()) {
         Move m = solution.top();
+        directionCounter[m.direction()]++;
         // qDebug() << cnt << ":" << m.toString();
         resultItems << QString("%1: %2").arg(cnt, textWidth).arg(m.toString());
         if (cnt % 5 == 0) {
@@ -225,6 +227,17 @@ void RoadForm::printPath(const QSharedPointer<TreeNode> path)
     }
     resultItems << QString("%1: success!").arg(cnt, textWidth);
     // qDebug() << "";
+    static const QString strDirection[5] = {
+        "     ",
+        " up  ",
+        "down ",
+        "left ",
+        "right"
+    };
+    for (int i = 1; i <= 4; i++)
+    {
+        qDebug() << strDirection[i] << ":" << directionCounter[i];
+    }
     ui->listWidget->clear();
     ui->listWidget->addItems(resultItems);
     ui->listWidget->setCurrentRow(0);

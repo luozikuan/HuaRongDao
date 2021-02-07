@@ -17,6 +17,7 @@ SOURCES += \
     widget.cpp
 
 HEADERS += \
+    levels.h \
     move.h \
     road.h \
     roadform.h \

@@ -182,7 +182,7 @@ QString Road::toString() const
     return result;
 }
 
-QChar Road::element(int x, int y)
+QChar& Road::element(int x, int y)
 {
     return m_road[x*m_size.colCount + y];
 }

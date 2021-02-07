@@ -38,7 +38,7 @@ public:
     void reset();
 
 private:
-    QChar element(int x, int y);
+    QChar &element(int x, int y);
     QChar element(int x, int y) const;
 
     RoadData m_road;
