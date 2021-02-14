@@ -90,6 +90,7 @@ void RoadForm::startSolve()
         QSharedPointer<TreeNode> firstNode = tree.dequeue();
 
         QVector<Move> moves = firstNode->road.availableMoves();
+        moves.removeOne(firstNode->move.reversed());
 
         Road curBoard = firstNode->road;
         for (Move m: qAsConst(moves)) {

@@ -15,7 +15,9 @@ public:
     int distance() const;
 
     void reverse();
+    Q_REQUIRED_RESULT Move reversed() const;
     bool operator<(const Move &other) const;
+    bool operator==(const Move &other) const;
     QString toString() const;
 
 private:

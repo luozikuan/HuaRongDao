@@ -35,9 +35,23 @@ void Move::reverse()
     }
 }
 
+Move Move::reversed() const
+{
+    Move m = *this;
+    m.reverse();
+    return m;
+}
+
 bool Move::operator<(const Move &other) const
 {
     return m_id < other.m_id;
+}
+
+bool Move::operator==(const Move &other) const
+{
+    return m_id == other.m_id
+            && m_direction == other.m_direction
+            && m_distance == other.m_distance;
 }
 
 QString Move::toString() const
